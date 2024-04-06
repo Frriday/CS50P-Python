@@ -7,6 +7,7 @@ while True:
         response = requests.get("https://api.coindesk.com/v1/bpi/currentprice.json")
         msg = response.json()
         rate = float(msg["bpi"]["USD"]["rate_float"])
+        #此处也可以采用捕捉 IndexError 的方式来处理
         if len(sys.argv) != 2:
             raise ValueError
         n = float(sys.argv[1])
