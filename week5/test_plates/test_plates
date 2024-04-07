@@ -1,0 +1,16 @@
+from plates import is_valid
+
+def test_plates():
+    assert is_valid("CS50") == True
+    assert is_valid("CS05") == False
+    assert is_valid("CSS05") == False
+    assert is_valid("CSS50") == True
+    assert is_valid("05") == False
+    assert is_valid("C05") == False
+    assert is_valid("C50") == False
+    assert is_valid("CS05S") == False
+    assert is_valid("CS50S") == False
+    assert is_valid("C") == False
+    assert is_valid("CS") == True
+    assert is_valid("CSSSC50") == False
+    assert is_valid("CS50!") == False
